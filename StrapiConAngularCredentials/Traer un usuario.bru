@@ -1,0 +1,15 @@
+meta {
+  name: Traer un usuario
+  type: http
+  seq: 1
+}
+
+get {
+  url: http://localhost:1337/api/auth/local
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}
