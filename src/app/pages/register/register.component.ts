@@ -54,6 +54,19 @@ export class RegisterComponent {
 
   getError(control: string) {
     switch (control) {
+
+      case 'name':
+        if (this.formRegister.controls.usuario.errors?.['required'])
+          return 'El campo nombre es requerido';
+        break;
+
+
+      case 'surname':
+        if (this.formRegister.controls.usuario.errors?.['required'])
+          return 'El campo apellido es requerido';
+        break;
+  
+
       case 'usuario':
         if (this.formRegister.controls.usuario.errors?.['required'])
           return 'El campo usuario es requerido';
@@ -69,6 +82,11 @@ export class RegisterComponent {
       case 'password':
         if (this.formRegister.controls.password.errors?.['required'])
           return 'El campo contraseña es requerido';
+        break;
+
+      case 'repitPassword':
+        if (this.formRegister.controls.password.errors?.['required'])
+          return 'El campo Repetir Contraseña es requerido';
         break;
 
       default:
