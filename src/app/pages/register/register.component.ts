@@ -11,6 +11,9 @@ import { Router } from '@angular/router';
   styleUrl: './register.component.scss'
 })
 export class RegisterComponent {
+  onClick() {
+  this.router.navigate(['./login']);
+  }
 
   formRegister;
 
