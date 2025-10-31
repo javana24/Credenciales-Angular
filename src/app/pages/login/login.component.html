@@ -8,7 +8,7 @@
     <p class="mb-5 text-gray-600 text-sm mix-blend-color-dodge text-center">
       Accede con tus credenciales
     </p>
-    <form class="px-5" [formGroup]="formLogin" (ngSubmit)="onSubmit()">
+    <form class="px-5" [formGroup]="formLogin" (ngSubmit)="onSubmit()" >
       <div class="mb-3">
         <label class="block text-white" for="email">Email</label>
         <div class="relative">
@@ -114,7 +114,8 @@
         ¿No tienes cuenta?
       </p>
       <button
-        class="text-center mb-3 w-full px-4 py-2 font-medium bg-blue-500 hover:bg-blue-600 border border-blue-400 text-white"
+        (click)="onClick()"
+        class="text-center mb-3 w-full px-4 py-2 font-medium text-white"
         type="submit"
       >
         Registrate

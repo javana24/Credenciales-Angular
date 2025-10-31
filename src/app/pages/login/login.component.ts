@@ -11,6 +11,9 @@ import { Router } from '@angular/router';
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
+  onClick() {
+    this.router.navigate(['/register']);
+  }
 
   formLogin;
 
@@ -21,9 +24,12 @@ export class LoginComponent {
   ){
     this.formLogin = this.formSvc.group({
       'email':['', [Validators.required, Validators.email]],
-      'password':['', [Validators.required]],
+      'password':['', [Validators.required, Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/)]],
     });
   }
+
+
+
 
   onSubmit() {
     if (this.formLogin.invalid) {

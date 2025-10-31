@@ -22,7 +22,7 @@ export class RegisterComponent {
     this.formRegister = this.formSvc.group({
       'usuario': ['', [Validators.required]],
       'email': ['', [Validators.required, Validators.email]],
-      'password': ['', [Validators.required]]
+      'password':['', [Validators.required, Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/)]]
     });
   }
 
